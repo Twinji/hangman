@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Hangman</title>
+        <script type="text/javascript"src="game.js"></script>
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                background: linear-gradient(
+                    to bottom, 
+                    rgb(50, 10, 10), 
+                    brown, 
+                    rgb(50, 10, 10)
+                );
+				overflow-y: hidden;
+                color: 
+            }
+            body * {
+                font-family: sans-serif;
+                -webkit-transition: all 0.5s ease;
+                -mox-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                -webkit-transform: translateZ(0);
+                -moz-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                -o-transform: translateZ(0);
+                transform: translateZ(0);
+            }          
+            #container {
+                text-align: center;
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            #canvas {
+                margin: 0 auto;
+                margin-bottom: 40px;
+                padding: 0;
+                display: block;
+                background: linear-gradient(to bottom, darkslategrey, rgb(15, 35, 35));
+                border-bottom: 10px solid rgb(5, 15, 15);
+				overflow: hidden;
+                z-index: 20;
+                border-radius: 50px;
+                
+            }
+			span, #data {
+				font-family: sans-serif;
+				color: white;
+				font-size: 16px;
+                text-align: center;
+			}
+            input {
+                border: none;
+                text-align: center;
+                background-color: rgb(100, 170, 180);
+                color: white;
+                padding: 6px;
+                width: 170px;
+                font-size: 20px;
+                margin: 0 4px;
+                border-radius: 20px;
+                border-bottom: 5px solid teal;
+            }
+            input[type="submit"] {
+                background-color: crimson;
+                border-bottom: 5px solid maroon;
+                width: 50px;
+            }
+            input[type="submit"]:active {
+                background-color: black;
+                transform: translateY(5px);
+                border-bottom: 0px solid black;
+            }
+            input::-webkit-input-placeholder {color: teal;}
+            input:focus::-webkit-input-placeholder {color: rgb(100, 170, 180);}
+            input:focus {outline: none;}
+            #canvas, input {
+                box-shadow: 0px 20px 100px rgba(0, 0, 0, 0.4);
+            }
+            h1 {
+                color: white;
+                letter-spacing: 3px;
+            }
+        </style>
+    </head>
+    <body onload="main();">
+        <div id="container">
+            <h1>HANGMAN</h1>
+            <canvas id = "canvas">
+                <span>Please install Google Chrome.</span>
+            </canvas>
+            <input type="text" maxlength="1" placeholder="Enter a letter" id="guess"/>
+            <input type="submit" value="Go" onclick="processGuess();"/>
+        </div>
+        
+    </body>
+</html>
